@@ -33,3 +33,28 @@ var Server = /** @class */ (function () {
     return Server;
 }());
 var server = new Server('AWS', 1234);
+var user = {
+    name: 'Vladilen',
+    age: 25,
+    logInfo: function () {
+        console.log(this.name + ' ' + this.age);
+    }
+};
+var User = /** @class */ (function () {
+    function User(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    User.prototype.sayHello = function () {
+        console.log(this.name + 'Hello!');
+    };
+    return User;
+}());
+var users = [
+    { id: 1, name: 'V', age: 2 },
+    { id: 2, name: 'E', age: 22 }
+];
+var users2 = [
+    { id: 1, name: 'V', age: 2 },
+    { id: 2, name: 'E', age: 22 }
+];

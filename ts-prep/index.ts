@@ -39,3 +39,55 @@ class Server {
 }
 
 const server: Server = new Server('AWS', 1234);
+
+
+// ////////////////////// interfaces and objects
+
+interface UserInterface {
+    name: String;
+    age: Number;
+    logInfo: () => void
+    id?: any
+}
+
+const user: UserInterface = {
+    name: 'Vladilen',
+    age: 25,
+    logInfo() {
+        console.log(this.name + ' ' + this.age);
+    }
+}
+
+///////////////// interfaces and classes
+
+interface SayHello {
+    sayHello: () => void;
+}
+
+class User implements SayHello {
+    constructor(private name: string, private age: number) {}
+
+    sayHello() {
+        console.log(this.name + 'Hello!');
+    }
+
+    namerrr: string
+}
+
+//generic classes
+
+interface IUser {
+    id: number;
+    name: string;
+    age: number;
+}
+
+const users: Array<IUser> = [
+    {id: 1, name: 'V', age: 2},
+    {id: 2, name: 'E', age: 22}
+]
+
+const users2: IUser[] = [
+    {id: 1, name: 'V', age: 2},
+    {id: 2, name: 'E', age: 22}
+]
