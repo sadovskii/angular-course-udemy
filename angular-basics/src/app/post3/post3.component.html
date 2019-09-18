@@ -1,1 +1,12 @@
-<img [src]="img" alt="">
+<!-- <img [src]=img alt="">
+<p>{{obj.a}} </p> -->
+
+<button (click)="onClick()">Click me!</button>
+
+<input 
+type="text" 
+(keyup.enter)="onInput($event)" 
+(blur)="onBlur(myInput.value)"
+#myInput>
+
+<p><strong>{{inputValue}}</strong></p>

@@ -13,6 +13,10 @@ export class Post3Component implements OnInit {
 
   img = 'https://ezerus.com.au/wp-content/uploads/2019/05/1_To2H39eauxaeYxYMtV1afQ.png';
 
+  inputValue = ''
+
+
+
   constructor() { 
     setTimeout(() => {
       console.log("Timeout is over");
@@ -21,6 +25,19 @@ export class Post3Component implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onInput(event: KeyboardEvent) {
+    console.log('Event: ', event);
+    this.inputValue = (<HTMLInputElement>event.target).value;
+  }
+
+  onBlur(str: string) {
+    this.inputValue = str;
+  }
+
+  onClick() {
+    console.log("click!");
   }
 
 }
