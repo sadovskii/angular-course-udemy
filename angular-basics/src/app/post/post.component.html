@@ -1,20 +1,22 @@
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="toggle = !toggle">Toggle</button>
 
-<div [ngStyle]="{
+<!-- <div [ngStyle]="{
     width: '200px',
     height: '200px',
     borderRadius: '6px',
     border: '1px solid #ccc',
-    background: backgroundToggle ? 'red' : 'green'
-}"></div>
+    background: toggle ? 'red' : 'green'
+}"></div> -->
 
-<p [ngClass]="{
-    red: backgroundToggle,
-    blue: !backgroundToggle
-}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquam at rem.
-</p>
+<!-- <p *ngIf="toggle; else blueP" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aliquam at rem.</p>
 
-<p 
-[class.blue]="!backgroundToggle"
-[class.red]="backgroundToggle"
->Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, beatae.</p>
+<ng-template #blueP>
+    <p class="red">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, beatae.</p>
+</ng-template> -->
+
+
+<div [ngSwitch]="toggle">
+    <p *ngSwitchCase="true" class="red">Lorem.</p>
+    <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dicta adipisci nisi distinctio, alias enim laudantium maiores? Eum, velit dolorum? In quaerat at cum consectetur ullam architecto deleniti aliquid, nemo officiis odit accusantium eligendi sapiente quasi ipsum laudantium vitae id reiciendis commodi praesentium delectus. Saepe repudiandae, quis quas labore voluptatibus neque cum omnis impedit amet placeat nostrum, inventore soluta blanditiis autem adipisci magnam eligendi mollitia illo fuga minus quibusdam, qui aliquam praesentium sequi. Eaque quas laudantium expedita ab dicta id sequi impedit! Ipsum veniam qui amet rerum, ducimus incidunt ipsam aperiam dignissimos nemo modi voluptatibus deleniti voluptatum tempora praesentium, tenetur temporibus fugit deserunt placeat debitis numquam cumque consequuntur id cupiditate! Eum iure culpa, itaque dolorum, quos pariatur numquam architecto eaque vel dolores fugit, reprehenderit id praesentium. Itaque minus, illo nihil obcaecati ratione dicta officia atque similique corporis nostrum, eligendi ea nesciunt doloremque, numquam maiores illum suscipit. Sed, voluptate corrupti reprehenderit quam odio amet maiores debitis accusantium incidunt iure magni maxime, mollitia adipisci nobis? Omnis ipsum nam cum excepturi ea consequuntur, ducimus, dolor pariatur debitis sit deleniti provident expedita itaque recusandae aperiam quas ipsa voluptates accusamus quae deserunt! Modi natus reprehenderit culpa quas sunt tempore, saepe debitis soluta. Eveniet velit similique vel eligendi, veniam laudantium. Voluptatibus earum unde sint reprehenderit adipisci porro ex veniam ducimus corporis, ratione, sed harum illo fuga aliquam dolore at iste animi voluptatem quas minus facilis quisquam consequuntur magni vero. Facere aliquid impedit ex eum corporis omnis sed expedita praesentium consectetur quos tenetur similique consequatur laboriosam, quisquam repellat ut iste quis hic.</p>
+    <p *ngSwitchDefault>Lorem.</p>
+</div>
