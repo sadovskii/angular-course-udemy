@@ -2,23 +2,4 @@
   get3 works!
 </p>
 
-<ul>
-  <li *ngFor="let number of arr; let idx=index">
-    {{idx + 1}} : <strong>{{number}}</strong>
-  </li>
-</ul>
-
-<ul>
-  <li *ngFor="let post of objs">
-    <p>{{post.title}} <b>{{post.author}}</b></p>
-    <ul>
-      <li *ngFor="let comment of post.comments">
-        <div>
-          <small>{{comment.name}}</small>
-          <p>{{comment.text}}</p>
-        </div>
-      </li>
-    </ul>
-
-  </li>
-</ul>
+<p>{{ now | date:"small" }}</p>
